@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { BsCalendarDate } from "react-icons/bs";
 import { MdFilterList } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
@@ -18,10 +19,12 @@ function Payment() {
             Statement Balance{" "}
             <span className="font-normal underline ml-[1vw]">R 34569.98</span>{" "}
           </h3>
-          <h3 className="font-bold text-[1.2vw]">
-            OPIGLO Prepaid Available Balance{" "}
-            <span className="font-normal underline ml-[1vw]">R 34569.9</span>{" "}
-          </h3>
+          <Link to={'/opiglo'}>
+            <h3 className="font-bold text-[1.2vw]">
+              OPIGLO Prepaid Available Balance{" "}
+              <span className="font-normal underline ml-[1vw]">R 34569.9</span>{" "}
+            </h3>
+          </Link>
           <h3 className="font-bold text-[1.2vw]">
             Current Payment Method{" "}
             <span className="font-normal underline ml-[2vw]">Prepaid(EFT)</span>{" "}
