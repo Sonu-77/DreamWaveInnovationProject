@@ -29,9 +29,11 @@ function Payment() {
             Current Payment Method{" "}
             <span className="font-normal underline ml-[2vw]">Prepaid(EFT)</span>{" "}
           </h3>
+          <Link to={'/choosepayment'}>
           <div className="h-[3vw] w-[10vw] flex justify-center items-center rounded-lg mt-[0.5vw] bg-[#87d9d9]">
             <p className="font-medium text-[1.2vw]">Add Balance</p>
           </div>
+          </Link>
         </div>
       </div>
       <div className="min-h-[15vw] w-[70vw] bg-[#ececec] ml-[18vw] mt-[3vw] rounded-xl">

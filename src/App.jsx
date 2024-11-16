@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Profile from "./components/Profile";
 import Payment from "./components/Payment";
 import Opiglo from "./components/Opiglo";
+import ChoosePaymentWay from "./components/ChoosePaymentWay";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         <Route path="/" element={<Home></Home>} />
         <Route path="/profiles" element={<Profile></Profile>} />
         <Route path="/payment" element={<Payment></Payment>} />
-        <Route path="/opiglo" element={<Opiglo />} />
+        <Route path="/opiglo" element={<Opiglo></Opiglo>} />
+        <Route path="/choosepayment" element={<ChoosePaymentWay></ChoosePaymentWay>} />
         <Route
           path="*"
           element={
@@ -24,6 +26,7 @@ function App() {
           }
         />
       </Routes>
+      
     </>
   );
 }
