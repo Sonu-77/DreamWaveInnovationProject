@@ -96,11 +96,11 @@ function Home() {
       <div className="current h-[30vw]  w-[100%]  flex flex-col pl-[10vw] gap-[1vw] mt-[2vw] ">
         <h2 className="text-[2vw] font-bold">Current News / Blogs</h2>
         <div className="w-[70vw] min-h-[8vw] bg-[#f0f0f0] rounded-md ">
-          <div className="h-[2vw] w-[70vw] bg-[#c2bebd] flex items-center font-bold rounded-md ">
+          <div className="h-[2vw] w-[70vw] bg-[#c2bebd] text-[1vw] flex items-center font-bold rounded-md ">
             <h4 className="ml-[4vw] ">Notifications</h4>
             <h1 className="ml-[25vw]">Dates</h1>
           </div>
-          <div className="h-[4vw] w-[69vw] ml-[0.5vw]  flex items-center border-b-[0.1vw] border-solid border-[#757374]">
+          <div className="h-[4vw] w-[69vw] ml-[0.5vw] text-[1vw]  flex items-center border-b-[0.1vw] border-solid border-[#757374]">
             <h4 className="ml-[3.5vw] font-medium ">Price Changed of Diesel</h4>
             <h1 className="ml-[20vw] font-medium">02/10/2025</h1>
             <p className="ml-[2vw] text-[#74a1e4]">read more</p>

@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React ,{useState, useEffect} from "react";
+import { Link, useLocation } from "react-router-dom";
 import { BsCalendarDate } from "react-icons/bs";
 import { MdFilterList } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
@@ -7,10 +7,26 @@ import { FcOk } from "react-icons/fc";
 import { FiDownload } from "react-icons/fi";
 
 function Payment() {
+
+  const [showHiddenDivs, setShowHiddenDivs] = useState(false);
+
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.state?.fromChoosePaymentContinueButton) {
+      setShowHiddenDivs(true);
+    }
+  }, [location.state]);
+
+  const handleReturn = ()=>{
+    setShowHiddenDivs(false)
+  }
+
+
   return (
     <div className="relative">
-      <div className="">
-        <div className="flex flex-col gap-[1vw] ml-[18vw] mt-[4vw]">
+      <div>
+        <div className="flex flex-col gap-[1vw] ml-[18vw] pt-[4vw]">
           <h3 className="font-bold text-[1.2vw]">
             Account Number{" "}
             <span className="font-normal underline ml-[1vw]">
@@ -43,7 +59,7 @@ function Payment() {
           <h4 className="ml-[1vw] text-[1.2vw] h-[100%] w-[25vw] flex justify-start font-medium tracking-wide items-center">
             Transaction Overview
           </h4>
-          <div className="flex gap-[1vw] ml-[18vw] text-[#ffffff] ">
+          <div className="flex gap-[1vw] text-[1vw] ml-[18vw] text-[#ffffff] ">
             <div className="flex pr-[1vw] items-center  gap-[0.5vw] rounded-md pl-[1vw] bg-[#15b2b2]">
               <h4>Date</h4>
               <BsCalendarDate />
@@ -58,7 +74,7 @@ function Payment() {
             </div>
           </div>
         </div>
-        <div className="h-[2vw] w-[68vw] bg-[#15b2b2] mt-[2vw] flex items-center justify-around font-bold rounded-md ml-[1vw] mr-[1vw] ">
+        <div className="h-[2vw] w-[68vw] text-[1vw] bg-[#15b2b2] mt-[2vw] flex items-center justify-around font-bold rounded-md ml-[1vw] mr-[1vw] ">
           <h4 className=" ">User Name</h4>
           <h4 className="">Transaction ID</h4>
           <h4 className="">Company Name</h4>
@@ -66,7 +82,7 @@ function Payment() {
           <h4 className="">Amount</h4>
           <h4 className="">Status</h4>
         </div>
-        <div className="h-[4vw] w-[68vw] ml-[1vw] relative mr-[1vw]  flex items-center justify-around border-b-[0.1vw] border-solid border-[#757374]">
+        <div className="h-[4vw] w-[68vw] ml-[1vw] text-[1vw] relative mr-[1vw]  flex items-center justify-around border-b-[0.1vw] border-solid border-[#757374]">
           <h4 className=" h-[100%] w-[10vw] flex justify-center items-center flex-wrap  font-medium ">
             John Doa
           </h4>
@@ -87,12 +103,16 @@ function Payment() {
           </h4>
         </div>
       </div>
-      <div className="z-10 absolute hidden h-[35vw] tracking-wider  flex-col gap-[1vw] w-[25vw] overflow-hidden items-center bg-[#ffffff] left-[40vw] top-0 ">
+      {showHiddenDivs && (
+        <>
+      <div className="h-[100vh]  bg-[#7e8082] opacity-40 w-[100%] absolute top-0">
+      </div>
+      <div className="z-10 absolute flex  mt-[2vw] rounded-xl h-[36vw] tracking-wider  flex-col gap-[1vw] w-[25vw] overflow-hidden items-center bg-[#ffffff] left-[40vw] top-0 ">
         <div className="relative h-[10vw] w-[90%]  bg-[#ffffff] flex flex-col justify-center items-center gap-[1vw] border-b-[0.1vw] border-dashed border-[#c5c5c5] ">
-          <div className="h-[3.5vw] w-[3.5vw] rounded-full bg-[#e4f3ee] flex justify-center items-center text-[2vw] ">
+          <div className="h-[3.5vw] w-[3.5vw]  rounded-full bg-[#e4f3ee] flex justify-center items-center text-[2vw] ">
             <FcOk />
           </div>
-          <h3>Payment Success!</h3>
+          <h3 className="text-[1vw]">Payment Success!</h3>
           <div className="absolute -bottom-[0.6vw] -left-[1.7vw] -z-0 rounded-full h-[1vw] w-[1vw] bg-[#eff1ed]"></div>
           <div className="absolute -bottom-[0.6vw] -right-[1.7vw] rounded-full h-[1vw] w-[1vw] bg-[#eff1ed]"></div>
         </div>
@@ -118,16 +138,19 @@ function Payment() {
           <h3 className="text-[#928e8e]">Amount</h3>
           <h6>R 56,777</h6>
         </div>
-        <div className="flex h-[3vw] w-[88%] mt-[1vw] rounded-md border-[0.1vw]  border-solid border-[#c5c5c5]  bg-[#ffffff] justify-center items-center gap-[1vw]">
+        <div className="flex h-[3vw] w-[88%] mt-[1vw] text-[1vw] rounded-md border-[0.1vw]  border-solid border-[#c5c5c5]  bg-[#ffffff] justify-center items-center gap-[1vw]">
           <FiDownload />
-          <h4>Get PDF Receipts</h4>
+          <h4 className="font-medium">Get PDF Receipts</h4>
         </div>
         <Link to={"/"}>
-          <div className="flex h-[3vw] w-[22vw] rounded-md border-[0.1vw]  border-solid border-[#c5c5c5]  bg-[#ffffff] justify-center items-center">
-            <h4>Return to home</h4>
+          <div onClick={handleReturn} className="flex h-[3vw] text-[1vw] w-[22vw] rounded-md border-[0.1vw]  border-solid border-[#c5c5c5]  bg-[#ffffff] justify-center items-center">
+            <h4 className="font-medium">Return to home</h4>
           </div>
         </Link>
       </div>
+        </>
+
+      )}
     </div>
   );
 }

@@ -6,13 +6,20 @@ import { SiMastercard } from "react-icons/si";
 import { BsBank } from "react-icons/bs";
 import { MdLockOutline } from "react-icons/md";
 import { FaAngleRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function ChoosePaymentWay() {
-  const [activeDiv, setActiveDiv] = useState(null);
+  const [activeDiv, setActiveDiv] = useState("");
+
+  const navigate = useNavigate()
 
   const handleClick = (id) => {
     setActiveDiv(id);
   };
+
+  const handleContinue = ()=>{
+    navigate('/payment',{state: { fromChoosePaymentContinueButton: true }})
+  }
 
   return (
     <div className="ml-[20vw] mt-[4vw] h-[35vw] w-[60vw] shadow-lg bg-[#ffffff] rounded-xl flex justify-evenly items-center pl-[1vw] pr-[1vw] ">
@@ -72,7 +79,7 @@ function ChoosePaymentWay() {
       </div>
       <div className="h-[30vw] w-[25vw]  flex flex-col gap-[1vw]">
         <div className="h-[8vw] w-[100%] bg-[#ebebeb] flex flex-col items-center justify-center rounded-xl">
-          <h6>Enter Amount</h6>
+          <h6 className="text-[1vw]">Enter Amount</h6>
           <h2 className="text-[2vw] underline">R 33,458</h2>
         </div>
         <div className="h-[15vw] w-[100%] bg-[#ebebeb] flex flex-col text-[2.5vw] rounded-xl  items-center justify-around">
@@ -85,7 +92,7 @@ function ChoosePaymentWay() {
             </h5>
           </div>
         </div>
-        <div className="h-[3vw] w-[100%] flex items-center justify-center text-[#ffffff] text-[1vw] rounded-xl bg-[#14b0b0]">
+        <div onClick={handleContinue} className="h-[3vw] cursor-pointer w-[100%] flex items-center justify-center text-[#ffffff] text-[1vw] rounded-xl bg-[#14b0b0]">
           <h5>Continue</h5>
           <FaAngleRight />
         </div>

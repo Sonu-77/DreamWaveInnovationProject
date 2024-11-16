@@ -26,16 +26,16 @@ function Navbar() {
             <IoHome />
           </div>
           <div>
-            <h4 className="text-[1vw] font-medium">address</h4>
+            <h4 className="text-[1vw] uppercase font-medium">address</h4>
             <p className="text-[0.7vw]">102 complex,259</p>
           </div>
         </div>
-        <div className="flex justify-center items-center gap-[0.7vw] h-[3vw] w-[10vw] ">
+        <div className="flex justify-center items-center gap-[0.7vw] h-[3vw] w-[11vw] ">
           <div className="h-[2vw] w-[2vw] rounded-full border-[0.08vw] border-solid border-[#14b0b0] text-[#14b0b0] justify-center items-center flex   ">
             <MdCall />
           </div>
           <div>
-            <h4 className="text-[1vw] font-medium">Phone Number</h4>
+            <h4 className="text-[1vw] uppercase font-medium">Phone Number</h4>
             <p className="text-[0.7vw]">+1234567890</p>
           </div>
         </div>
@@ -44,7 +44,7 @@ function Navbar() {
             <MdOutlineEmail />
           </div>
           <div>
-            <h4 className="text-[1vw] font-medium">Email Us Here</h4>
+            <h4 className="text-[1vw] uppercase font-medium">Email Us Here</h4>
             <p className="text-[0.7vw] ">abcd@zyz.com</p>
           </div>
         </div>

@@ -52,10 +52,10 @@ function Opiglo() {
         </ul>
       </div>
       <div className="h-[3vw] w-[70vw] flex justify-end items-center gap-[2vw]">
-        <div className="h-[2vw] w-[6vw] flex justify-center items-center text-[#ffffff] rounded-lg bg-[#eb1a19]">
+        <div className="h-[2vw] w-[6vw] flex justify-center text-[1vw] items-center text-[#ffffff] rounded-lg bg-[#eb1a19]">
           <h6>Cancel</h6>
         </div>
-        <div className="h-[2vw] w-[6vw] flex justify-center items-center text-[#ffffff] rounded-lg bg-[#82d80d]">
+        <div className="h-[2vw] w-[6vw] flex justify-center text-[1vw] items-center text-[#ffffff] rounded-lg bg-[#82d80d]">
           <h6>Continue</h6>
         </div>
       </div>
